@@ -1,15 +1,11 @@
-# Step 1: Build the app in image 'builder'
-FROM node:12.8-alpine AS builder
-
-WORKDIR /usr/src/app
+FROM node:16-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --force
 COPY . .
 RUN npm run build --force
 
-# Step 2: Use build output from 'builder'
-FROM nginx:stable-alpine
-LABEL version="1.0"
-
+### STAGE 2: Run ###
+FROM nginx:1.17.1-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
-
-WORKDIR /usr/share/nginx/html
-COPY --from=builder /usr/src/app/dist/app-angular-material/ .
+COPY --from=build /app/dist/app-angular-material /usr/share/nginx/html

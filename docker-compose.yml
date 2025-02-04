@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   app:
-    image: 'my-angular-app'
+    image: 'app-angular-material'
     build: '.'
     ports:
       - 3000:80
