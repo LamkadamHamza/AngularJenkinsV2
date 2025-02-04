@@ -11,7 +11,8 @@ pipeline {
         }
         stage ("Clone repo"){
             steps {
-                sh "git clone https://github.com/MaBouz/angular-jenkins.git"
+                sh "git clone https://github.com/LamkadamHamza/AngularJenkinsV1.git"
+
             }
         }
         stage ("Generate frontend image") {
