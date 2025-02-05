@@ -24,9 +24,9 @@ pipeline {
         }
         stage ("Run docker compose") {
             steps {
-                 dir("angular-jenkins"){
-                    sh " docker compose up -d"
-                }
+                     dir("AngularJenkinsV2"){
+                        sh "docker compose up -d"
+                    }
             }
         }
     }
