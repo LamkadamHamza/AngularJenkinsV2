@@ -17,9 +17,9 @@ pipeline {
         }
         stage ("Generate frontend image") {
             steps {
-                 dir("angular-jenkins"){
-                    sh "docker build -t app-angular-material ."
-                }
+                 dir("AngularJenkinsV2"){
+                     sh "docker build -t app-angular-material ."
+                 }
             }
         }
         stage ("Run docker compose") {
