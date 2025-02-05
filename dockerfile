@@ -9,3 +9,7 @@ RUN npm run build --force
 FROM nginx:1.17.1-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /app/dist/app-angular-material /usr/share/nginx/html
+
+
+
+

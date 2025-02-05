@@ -11,14 +11,14 @@ pipeline {
         }
         stage ("Clone repo"){
             steps {
-                sh "git clone https://github.com/LamkadamHamza/AngularJenkinsV1.git"
+                sh "git clone https://github.com/LamkadamHamza/AngularJenkinsV2.git"
 
             }
         }
         stage ("Generate frontend image") {
             steps {
                  dir("angular-jenkins"){
-                    sh "docker build -t angular-app ."
+                    sh "docker build -t app-angular-material ."
                 }
             }
         }
