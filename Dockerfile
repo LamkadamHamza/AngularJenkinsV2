@@ -13,4 +13,3 @@ COPY --from=build /app/dist/app-angular-material /usr/share/nginx/html
 
 
 
-
